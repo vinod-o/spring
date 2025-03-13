@@ -11,4 +11,4 @@ spec:
       protocol: TCP
   selectors:
     app: spring-app
-  type: ClusterIP
+  type: LoadBalaner
