@@ -5,16 +5,15 @@ metadata:
 spec:
   replicas: 2
   selector:
-    matchlabels:
-      app: spring-app
+    matchLabels:
+      app: spring-boot-project
   template:
     metadata:
-      name: spring-boot-project
       labels:
-        app: spring-app
+        app: spring-boot-project
     spec:
       containers:
-        - name: sprind-boot containers
+        - name: sprind-boot-containers
           image: vinodo3735/newbuild:v1
           ports:
-            - containerport: 8080
+            - containerPort: 8080
