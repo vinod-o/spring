@@ -21,7 +21,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: httpd-service
+  name: httpd
 spec:
   type: ClusterIp
   ports:
