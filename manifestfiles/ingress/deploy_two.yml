@@ -13,8 +13,8 @@ spec:
         app: httpd
     spec:
       containers:
-        - name: httpd image name
-          image: httpd
+        - name: httpd
+          image: httpd:latest
           ports:
             - containerPort: 80
 ---
@@ -23,10 +23,10 @@ kind: Service
 metadata:
   name: httpd
 spec:
-  type: ClusterIp
+  selector:
+    app: httpd
+  type: ClusterIP
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-  selector:
-    app: httpd

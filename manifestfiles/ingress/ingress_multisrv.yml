@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: Ingress Resources
+  name: ingress-resources
   annotations:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -11,14 +11,14 @@ spec:
     - http:
         paths:
           - path: /nginx
-            pathType: prefix
+            pathType: Prefix
             backend:
               service:
                 name: nginx
                 port:
                   number: 80
           - path: /httpd
-            pathType: prefix
+            pathType: Prefix
             backend:
               service:
                 name: httpd
