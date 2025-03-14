@@ -1,8 +1,9 @@
-apiVersion: networking
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: Ingress Resources
   annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   IngressClassName: nginx
