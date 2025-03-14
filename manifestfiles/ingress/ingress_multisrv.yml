@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   name: ingress-resources
   annotations:
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   IngressClassName: nginx
