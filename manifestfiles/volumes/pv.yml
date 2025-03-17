@@ -11,5 +11,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain # ✅ Moved outside `capacity`
   storageClassName: manual # ✅ Moved outside `capacity`
   awsElasticBlockStore: # ✅ Correct indentation
-    volumeId: vol-0d8ac0cdb765c1b6b
+    volumeId: aws://us-east-1a/vol-0d8ac0cdb765c1b6b
     fsType: ext4
