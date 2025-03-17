@@ -16,8 +16,8 @@ spec:
         - name: pvc
           image: nginx:latest
           volumeMounts:
-            mountPath: "/usr/share/nginx/html"
-            name: static-storage
+            - mountPath: /usr/share/nginx/html
+              name: static-storage
       volumes:
         - name: static-storage
           persistentVolumeClaim:
