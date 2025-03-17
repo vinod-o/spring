@@ -4,12 +4,12 @@ metadata:
   name: static-pv
 spec:
   capacity:
-    storage: 5Gi
-    volumeMode: Filesystem
-    accessModes:
-      - ReadWriteOnce
-    persistentVolumeReclaimPolicy: Retain
-    storageClassName: manual
-    awsElasticBlockStore:
-      volumeId: vol-0d8ac0cdb765c1b6b
-      fsType: ext4
+    storage: 5Gi # ✅ Correct format
+  volumeMode: Filesystem # ✅ Moved outside `capacity`
+  accessModes: # ✅ Moved outside `capacity`
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain # ✅ Moved outside `capacity`
+  storageClassName: manual # ✅ Moved outside `capacity`
+  awsElasticBlockStore: # ✅ Correct indentation
+    volumeId: vol-0d8ac0cdb765c1b6b
+    fsType: ext4
