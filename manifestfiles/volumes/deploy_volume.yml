@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: static-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pvc
+  template:
+    metadata:
+      labels:
+        app: pvc
+    spec:
+      containers:
+        - name: pvc
+          image: nginx:latest
+          volumeMounts:
+            mountPath: "/usr/share/nginx/html"
+            name: static-storage
+      volumes:
+        - name: static-storage
+          persistentVolumeClaim:
+            claimName: aws-static-pvc
